@@ -1,3 +1,3 @@
 # Best-Origins-Mod
-This mod gives every player quick revive and kills them afterwards.
+This modification allows each player to gain a certain advantage and suicides those players after this gift.
 WORKS ONLY ON ORIGINS!!!
