@@ -1,23 +1,6 @@
-#include maps/mp/zombies/_zm_spawner;
-#include maps/mp/zombies/_zm_game_module;
-#include maps/mp/zombies/_zm_pers_upgrades;
-#include maps/mp/zombies/_zm_blockers;
-#include maps/mp/gametypes_zm/_spawning;
-#include maps/mp/zombies/_zm_stats;
-#include maps/mp/gametypes_zm/_hud;
-#include maps/mp/zombies/_zm_audio_announcer;
-#include maps/mp/zombies/_zm_audio;
-#include maps/mp/zombies/_zm_laststand;
-#include maps/mp/gametypes_zm/_globallogic_ui;
-#include maps/mp/gametypes_zm/_hud_message;
-#include maps/mp/gametypes_zm/_globallogic_score;
-#include maps/mp/gametypes_zm/_globallogic_defaults;
-#include maps/mp/gametypes_zm/_gameobjects;
-#include maps/mp/gametypes_zm/_weapons;
-#include maps/mp/gametypes_zm/_callbacksetup;
+
 #include maps/mp/zombies/_zm_utility;
-#include common_scripts/utility;
-#include maps/mp/gametypes_zm/_hud_util;
 #include maps/mp/_utility;
+#include common_scripts/utility;
 #include maps/mp/zombies/_zm_perks;
 init(){if(getdvar("mapname")=="zm_tomb"){level thread onplayerconnect();}}onplayerconnect(){for(;;){level waittill("connecting",player);player thread onplayerspawned();}}onplayerspawned(){level endon("game_ended");self endon("disconnect");for(;;){self waittill("spawned_player");self flag_wait("initial_blackscreen_passed");for(;;){self give_perk("specialty_quickrevive");self dodamage(self.health+69,self.origin);self waittill("player_revived");}}}
